@@ -31,7 +31,7 @@ namespace Exercicio_2
             for (int R = 0; R < NR; R = R + 1)
             {
 
-                Console.WriteLine("Vamos jogar uma rodada");
+                Console.WriteLine($"Vamos jogar uma rodada {R + 1} de {NR} ");
 
                 //input do jogador
                 VJ = ValorJogadorDigitado("Digite um valor entre 1 e 50", "O que voce digitou nao atende os requisitos", 1, 50);
@@ -88,10 +88,11 @@ namespace Exercicio_2
             Console.WriteLine("O jogo terminou. Suas pontuacoes em milisegundos:");
             for (int Q = 1; Q <= NR; Q = Q + 1)
             {
-                Console.WriteLine("Rodada" + Q + ": " + medidas[Q]);
+                Console.WriteLine("Rodada" + Q + ": " + medidas[Q - 1]);
             }
             TT = MediaTempo(medidas);
             Console.WriteLine("A media entre as rodadas foi: " + TT);
+            Console.ReadLine();
 
         }
 
@@ -103,7 +104,9 @@ namespace Exercicio_2
             {
                 soma = soma + tempos[0];
             }
-            media = soma / tempos.Length;
+            if (tempos.Length > 0)
+                media = soma / tempos.Length;
+
             return media;
         }
 
