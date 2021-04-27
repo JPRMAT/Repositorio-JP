@@ -151,7 +151,6 @@ namespace Exercicio_2
                     Console.WriteLine(mensagem_erro);
 
             } while (!achou);
-            
 
             return dado;
         }
