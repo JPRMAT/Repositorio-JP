@@ -90,20 +90,44 @@ namespace Exercicio_2
             {
                 Console.WriteLine("Rodada" + Q + ": " + medidas[Q - 1]);
             }
+
+
+            int QQ = 1;
+            while (QQ <= NR)
+            {
+                int a = 1;
+                Console.WriteLine("Rodada" + QQ + ": " + medidas[QQ - 1]);
+                a = a + 1;
+                QQ = QQ + 1;
+
+            }
+
             TT = MediaTempo(medidas);
             Console.WriteLine("A media entre as rodadas foi: " + TT);
             Console.ReadLine();
 
+
+        }
+
+        static double Banana(double a, double b)
+        {
+            double c;
+            c = a + b;
+            return c;
         }
 
         static double MediaTempo(double[] tempos)
         {
             double soma = 0;
             double media = 0;
+
             for (int i = 0; i < tempos.Length; i++)
             {
-                soma = soma + tempos[0];
+                double resultado1;
+                resultado1 = Banana(a: soma, b: tempos[i]); 
+                soma = resultado1;
             }
+
             if (tempos.Length > 0)
                 media = soma / tempos.Length;
 
